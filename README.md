@@ -28,32 +28,30 @@ pub get
 flutter packages get
 Lastly, we need to extend Equatable
 
-import 'package:equatable/equatable.dart';
 
-class Person extends Equatable {
-const Person(this.name);
 
-final String name;
+Bloc:
 
-@override
-List<Object> get props => [name];
-}
-When working with json:
+https://pub.dev/packages/flutter_bloc
 
-import 'package:equatable/equatable.dart';
+Widgets that make it easy to integrate blocs and cubits into Flutter. Built to work with package:bloc.
 
-class Person extends Equatable {
-const Person(this.name);
 
-final String name;
+Bloc version used in this project:-
 
-@override
-List<Object> get props => [name];
+flutter_bloc: ^8.0.1
 
-factory Person.fromJson(Map<String, dynamic> json) {
-return Person(json['name']);
-}
-}
+
+
+Dio:
+
+https://pub.dev/packages/dio
+
+A powerful Http client for Dart, which supports Interceptors, Global configuration, FormData, Request Cancellation, File downloading, Timeout etc.
+
+dio: ^4.0.4
+
+
 
 
 
