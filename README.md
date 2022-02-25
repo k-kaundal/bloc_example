@@ -1,16 +1,63 @@
-# bloc_example
+Bloc Example
 
-A new Flutter project.
+Equatable
+ 
+https://pub.dev/packages/equatable
 
-## Getting Started
+Equatable version used in this project:-
+equatable: ^2.0.3
 
-This project is a starting point for a Flutter application.
+Equatable overrides == and hashCode for you so you don't have to waste your time writing lots of boilerplate code.
 
-A few resources to get you started if this is your first Flutter project:
+There are other packages that will actually generate the boilerplate for you; however, you still have to run the code generation step which is not ideal.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+With Equatable there is no code generation needed and we can focus more on writing amazing applications and less on mundane tasks.
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Usage
+
+First, we need to do add equatable to the dependencies of the pubspec.yaml
+
+dependencies:
+equatable: ^2.0.0
+Next, we need to install it:
+
+# Dart
+pub get
+
+# Flutter
+flutter packages get
+Lastly, we need to extend Equatable
+
+import 'package:equatable/equatable.dart';
+
+class Person extends Equatable {
+const Person(this.name);
+
+final String name;
+
+@override
+List<Object> get props => [name];
+}
+When working with json:
+
+import 'package:equatable/equatable.dart';
+
+class Person extends Equatable {
+const Person(this.name);
+
+final String name;
+
+@override
+List<Object> get props => [name];
+
+factory Person.fromJson(Map<String, dynamic> json) {
+return Person(json['name']);
+}
+}
+
+
+
+
+
+
+
