@@ -1,6 +1,6 @@
-## Bloc Example
+# Bloc Example
 
-# Equatable
+## Equatable
  
 https://pub.dev/packages/equatable
 
@@ -21,10 +21,10 @@ dependencies:
 equatable: ^2.0.0
 Next, we need to install it:
 
-# Dart
+### Dart
 pub get
 
-# Flutter
+### Flutter
 flutter packages get
 Lastly, we need to extend Equatable
 
