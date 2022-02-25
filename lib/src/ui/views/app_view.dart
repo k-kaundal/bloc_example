@@ -1,5 +1,4 @@
-import 'package:bloc_example/app.dart';
-import 'package:bloc_example/ui/home.dart';
+import 'package:bloc_example/src/app.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 class AppView extends StatelessWidget {
@@ -7,11 +6,23 @@ class AppView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    /// Bloc Builder only use when the user change theme data with the help of
+    /// button or toggle and touch.
+    /// if there is auto change then you can remove the blocs Builder
+    /// [BlocBuilder] Build the business loc
+
+    ///
+    /// Bloc Provider Provide the Business Logic for the developer
+    ///
     return BlocBuilder<ThemeCubit, ThemeData>(builder: (_ ,theme){
       return MaterialApp(
         debugShowCheckedModeBanner: false,
-        theme: theme,
+        /// change theme by user with the help of button or toggle
+        // theme: theme,  // for user change with setting
         home: CounterPage(),
+        /// for auto theme change with the change of phone theme
+        theme:  ThemeData.light(),   // for light theme
+        darkTheme: ThemeData.dark(),  // for dark theme
       );
     });
   }
@@ -87,10 +98,10 @@ class CounterView extends StatelessWidget {
 /// Event being processed by [CounterBloc].
 abstract class CounterEvent {}
 
-/// Notifies bloc to increment state.
+/// Notifies blocs to increment state.
 class CounterIncrementPressed extends CounterEvent {}
 
-/// Notifies bloc to decrement state.
+/// Notifies blocs to decrement state.
 class CounterDecrementPressed extends CounterEvent {}
 
 /// {@template counter_bloc}
