@@ -1,6 +1,6 @@
-Bloc Example
+## Bloc Example
 
-Equatable
+# Equatable
  
 https://pub.dev/packages/equatable
 
@@ -30,7 +30,7 @@ Lastly, we need to extend Equatable
 
 
 
-Bloc:
+## Bloc:
 
 https://pub.dev/packages/flutter_bloc
 
@@ -43,12 +43,14 @@ flutter_bloc: ^8.0.1
 
 
 
-Dio:
+## Dio:
 
 https://pub.dev/packages/dio
 
 A powerful Http client for Dart, which supports Interceptors, Global configuration, FormData, Request Cancellation, File downloading, Timeout etc.
 
+
+Dio version used in this project:-
 dio: ^4.0.4
 
 
