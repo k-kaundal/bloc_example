@@ -14,7 +14,6 @@ class InterestLoaded extends InterestState{
   const InterestLoaded(this.interests);
 }
 
-
 class InterestError extends InterestState{
   final String? message;
   const InterestError(this.message);
