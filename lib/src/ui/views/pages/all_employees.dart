@@ -3,9 +3,7 @@ import 'package:bloc_example/src/blocs/all_employee/all_employee_state.dart';
 import 'package:bloc_example/src/ui/views/pages/employee.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import '../../../blocs/all_employee/all_employee_event.dart';
-import '../../../blocs/employee/employee_state.dart';
 
 class AllEmployee extends StatefulWidget {
   const AllEmployee({Key? key}) : super(key: key);
@@ -39,47 +37,76 @@ class _AllEmployeeState extends State<AllEmployee> {
               ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                 content: Text(state.message.toString()),
               ));
+
             }
           },
           child: BlocBuilder<AllEmployeeBloc, AllEmployeeState>(
             builder: (context, state) {
               if (state is AllEmployeeInitial) {
-                return Container();
+                return Center(child: CircularProgressIndicator());
               } else if (state is AllEmployeeLoading) {
-                return Container();
+                return Center(child: CircularProgressIndicator());
               } else if (state is AllEmployeeLoaded) {
-                print(state.allEmployeeModel.data![0].profileImage.toString());
                 return ListView.builder(
                     itemCount: state.allEmployeeModel.data!.length,
                     itemBuilder: (context, index) {
                       return InkWell(
-                        onTap: ()=>
-                          Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => Employee(
-                                    id: state.allEmployeeModel.data![index].id
-                                        .toString(),
-                                  ))),
+                        onTap: () =>
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => Employee(
+                                      id: state.allEmployeeModel.data![index].id
+                                          .toString(),
+                                    ))),
                         child: Card(
                             elevation: 2,
                             child: Container(
+                              margin: EdgeInsets.all(5),
                               child: Column(
                                 children: [
                                   Row(
                                     children: [
-                                      CircleAvatar(
-                                        backgroundImage: NetworkImage(state
-                                            .allEmployeeModel
-                                            .data![index]
-                                            .profileImage
-                                            .toString()),
-                                        // backgroundImage: NetworkImage('https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg'),
+                                      Expanded(
+                                        flex: 2,
+                                        child: CircleAvatar(
+                                          backgroundImage: NetworkImage(state
+                                              .allEmployeeModel
+                                              .data![index]
+                                              .profileImage
+                                              .toString()),
+                                          // backgroundImage: NetworkImage('https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg'),
+                                        ),
                                       ),
-                                      SizedBox(
-                                        width: size.width * 0.03,
+                                      Expanded(
+                                        flex: 9,
+                                        child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                state.allEmployeeModel
+                                                    .data![index].employeeName
+                                                    .toString(),
+                                                style: TextStyle(
+                                                    fontStyle: FontStyle.italic,
+                                                    fontSize: 17,
+                                                    fontWeight: FontWeight.w600),
+                                              ),
+                                              Text(
+                                                state.allEmployeeModel
+                                                    .data![index].employeeSalary
+                                                    .toString(),
+                                                style: TextStyle(
+                                                    fontStyle: FontStyle.italic),
+                                              )
+                                            ]),
                                       ),
-                                      Text(state.allEmployeeModel.data![index]
-                                          .employeeName
-                                          .toString())
+                                      Expanded(
+                                        flex: 1,
+                                        child: Icon(
+                                          Icons.arrow_forward_ios,
+                                          color: Colors.blue,
+                                        ),
+                                      )
                                     ],
                                   ),
                                 ],
@@ -88,7 +115,8 @@ class _AllEmployeeState extends State<AllEmployee> {
                       );
                     });
               } else {
-                return Container();
+                return Center(child: ElevatedButton(onPressed: ()=>Navigator.of(context).pop(),
+                child: Container(child: Text('Back'),),));
               }
             },
           ),

@@ -1,6 +1,5 @@
 import 'package:bloc_example/src/blocs/employee/employee_bloc.dart';
 import 'package:bloc_example/src/blocs/employee/employee_event.dart';
-import 'package:bloc_example/src/models/employee_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -42,9 +41,9 @@ class _EmployeeState extends State<Employee> {
         child: BlocBuilder<EmployeeBloc, EmployeeState>(
           builder: (context, state) {
             if (state is EmployeeInitial) {
-              return Container();
+              return Center(child: CircularProgressIndicator());
             } else if (state is EmployeeLoading) {
-              return Container();
+              return Center(child: CircularProgressIndicator());
             } else if (state is EmployeeLoaded) {
               return Container(
                 child: Center(
@@ -58,14 +57,15 @@ class _EmployeeState extends State<Employee> {
                           radius: 60,
                         ),
                         Container(
-                          margin: EdgeInsets.only(top: size.height*0.01),
+                          margin: EdgeInsets.only(top: size.height * 0.01),
                           child: Text(
                             state.employeeModel.data!.employeeName.toString(),
-                            style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold),
+                            style: TextStyle(
+                                fontSize: 22, fontWeight: FontWeight.bold),
                           ),
                         ),
                         Container(
-                          margin: EdgeInsets.only(top: size.height*0.02),
+                          margin: EdgeInsets.only(top: size.height * 0.02),
                           height: size.height * 0.65,
                           width: size.width * 0.9,
                           child: Column(
@@ -76,15 +76,25 @@ class _EmployeeState extends State<Employee> {
                                   child: Container(
                                     width: size.width,
                                     child: Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
                                       children: [
                                         Padding(
                                             padding: EdgeInsets.all(2),
-                                            child: Text('Employee ID',style: TextStyle(fontStyle: FontStyle.italic),)),
+                                            child: Text(
+                                              'Employee ID',
+                                              style: TextStyle(
+                                                  fontStyle: FontStyle.italic),
+                                            )),
                                         Padding(
                                           padding: EdgeInsets.all(2),
-                                          child: Text(state.employeeModel.data!.id
-                                              .toString(),style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
+                                          child: Text(
+                                            state.employeeModel.data!.id
+                                                .toString(),
+                                            style: TextStyle(
+                                                fontSize: 18,
+                                                fontWeight: FontWeight.bold),
+                                          ),
                                         ),
                                       ],
                                     ),
@@ -97,15 +107,26 @@ class _EmployeeState extends State<Employee> {
                                   child: Container(
                                     width: size.width,
                                     child: Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
                                       children: [
                                         Padding(
                                             padding: EdgeInsets.all(2),
-                                            child: Text('Employee Age',style: TextStyle(fontStyle: FontStyle.italic),)),
+                                            child: Text(
+                                              'Employee Age',
+                                              style: TextStyle(
+                                                  fontStyle: FontStyle.italic),
+                                            )),
                                         Padding(
                                           padding: EdgeInsets.all(2),
-                                          child: Text(state.employeeModel.data!.employeeAge
-                                              .toString(),style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
+                                          child: Text(
+                                            state
+                                                .employeeModel.data!.employeeAge
+                                                .toString(),
+                                            style: TextStyle(
+                                                fontSize: 18,
+                                                fontWeight: FontWeight.bold),
+                                          ),
                                         ),
                                       ],
                                     ),
@@ -118,22 +139,32 @@ class _EmployeeState extends State<Employee> {
                                   child: Container(
                                     width: size.width,
                                     child: Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
                                       children: [
                                         Padding(
                                             padding: EdgeInsets.all(2),
-                                            child: Text('Employee Salary',style: TextStyle(fontStyle: FontStyle.italic),)),
+                                            child: Text(
+                                              'Employee Salary',
+                                              style: TextStyle(
+                                                  fontStyle: FontStyle.italic),
+                                            )),
                                         Padding(
                                           padding: EdgeInsets.all(2),
-                                          child: Text(state.employeeModel.data!.employeeSalary
-                                              .toString(),style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
+                                          child: Text(
+                                            state.employeeModel.data!
+                                                .employeeSalary
+                                                .toString(),
+                                            style: TextStyle(
+                                                fontSize: 18,
+                                                fontWeight: FontWeight.bold),
+                                          ),
                                         ),
                                       ],
                                     ),
                                   ),
                                 ),
                               ),
-
                             ],
                           ),
                         )
@@ -141,7 +172,13 @@ class _EmployeeState extends State<Employee> {
                 ),
               );
             } else {
-              return Container();
+              return Center(
+                  child: ElevatedButton(
+                onPressed: () => Navigator.of(context).pop(),
+                child: Container(
+                  child: Text('Back'),
+                ),
+              ));
             }
           },
         ),
