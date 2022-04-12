@@ -58,7 +58,7 @@ class _AllEmployeeState extends State<AllEmployee> {
                                           .toString(),
                                     ))),
                         child: Card(
-                            elevation: 2,
+                            elevation: 1,
                             child: Container(
                               margin: EdgeInsets.all(5),
                               child: Column(
@@ -91,7 +91,7 @@ class _AllEmployeeState extends State<AllEmployee> {
                                                     fontSize: 17,
                                                     fontWeight: FontWeight.w600),
                                               ),
-                                              Text(
+                                              Text("Salary: "+
                                                 state.allEmployeeModel
                                                     .data![index].employeeSalary
                                                     .toString(),
