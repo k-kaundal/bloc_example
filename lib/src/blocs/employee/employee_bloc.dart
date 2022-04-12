@@ -5,19 +5,17 @@ import 'employee_event.dart';
 import 'employee_state.dart';
 
 class EmployeeBloc extends Bloc<EmployeeEvent,EmployeeState>{
-  String id;
-  EmployeeBloc({
-    required this.id
-}) : super(EmployeeInitial()){
+  EmployeeBloc() : super(EmployeeInitial()){
     final Repository _apiRepository = Repository();
 
-    on<GetEmployeeList>((event, emit) async{
+    on<GetEmployee>((event, emit) async{
       try{
         emit(EmployeeInitial());
-        final mList = await _apiRepository.fetchEmployee(id: id);
-        emit(EmployeeLoaded(mList));
-        if(mList.error != null){
-          emit(EmployeeError(mList.error));
+        final data = await _apiRepository.fetchEmployee(id:event.id);
+        emit(EmployeeLoaded(data));
+        print(data);
+        if(data.error != null){
+          emit(EmployeeError(data.error));
         }
       }on NetworkError {
         emit(EmployeeError("Failed to fetch data , is your device ?"));

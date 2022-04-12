@@ -1,8 +1,9 @@
 import 'package:bloc_example/src/models/all_employee_model.dart';
 import 'package:bloc_example/src/models/create_employee_model.dart';
-import 'package:bloc_example/src/models/employee_model.dart';
 import 'package:bloc_example/src/models/interests.dart';
 import 'package:dio/dio.dart';
+
+import '../models/employee_model.dart';
 
 class ApiProvider {
   final Dio _dio = Dio();
@@ -20,15 +21,17 @@ class ApiProvider {
     }
   }
 
-  Future<EmployeeModel> fetchEmployee({required String id}) async{
+  Future<EmployeeModel> fetchEmployee({required String id}) async {
     try {
-      Response response = await _dio.get(_baseUri + 'employee');
+      Response response = await _dio.get(_baseUri + 'employee/$id');
+      print(response);
       return EmployeeModel.fromJson(response.data);
     } catch (error, stacktrace) {
       print("Error $error  stacktrace $stacktrace");
       return EmployeeModel.withError("Employee data not found");
     }
   }
+
   Future<AllEmployeeModel> fetchAllEmployee() async {
     try {
       Response response = await _dio.get(_baseUri + 'employees');

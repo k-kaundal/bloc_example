@@ -11,7 +11,7 @@ class Repository{
     return _provider.fetchInterest();
   }
  Future<EmployeeModel> fetchEmployee({required String id}){
-    return _provider.fetchEmployee(id: id);
+    return _provider.fetchEmployee( id:id);
  }
   Future<AllEmployeeModel> fetchAllEmployee(){
     return _provider.fetchAllEmployee();

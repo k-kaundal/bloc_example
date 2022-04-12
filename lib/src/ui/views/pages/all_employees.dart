@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../blocs/all_employee/all_employee_event.dart';
+import '../../../blocs/employee/employee_state.dart';
 
 class AllEmployee extends StatefulWidget {
   const AllEmployee({Key? key}) : super(key: key);
@@ -52,13 +53,12 @@ class _AllEmployeeState extends State<AllEmployee> {
                     itemCount: state.allEmployeeModel.data!.length,
                     itemBuilder: (context, index) {
                       return InkWell(
-                        onTap: () {
+                        onTap: ()=>
                           Navigator.of(context).push(MaterialPageRoute(
                               builder: (context) => Employee(
                                     id: state.allEmployeeModel.data![index].id
                                         .toString(),
-                                  )));
-                        },
+                                  ))),
                         child: Card(
                             elevation: 2,
                             child: Container(
