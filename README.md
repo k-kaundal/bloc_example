@@ -53,11 +53,16 @@ A powerful Http client for Dart, which supports Interceptors, Global configurati
 Dio version used in this project:-
 dio: ^4.0.4
 
-#Screenshots
+## Screenshots
 
-Home
-
+# Home
 <img src='https://github.com/codelabs-live/bloc_example/blob/master/screenshots/home.png' height=500px/>
+
+# AllEmployees
+<img src='https://github.com/codelabs-live/bloc_example/blob/master/screenshots/all_employees.png' height=500px/>
+
+# Profile
+<img src='https://github.com/codelabs-live/bloc_example/blob/master/screenshots/employee_profile.png' height=500px/>
 
 
 
