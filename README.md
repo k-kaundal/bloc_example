@@ -55,13 +55,13 @@ dio: ^4.0.4
 
 ## Screenshots
 
-# Home
+## Home
 <img src='https://github.com/codelabs-live/bloc_example/blob/master/screenshots/home.png' height=500px/>
 
-# AllEmployees
+## AllEmployees
 <img src='https://github.com/codelabs-live/bloc_example/blob/master/screenshots/all_employees.png' height=500px/>
 
-# Profile
+## Profile
 <img src='https://github.com/codelabs-live/bloc_example/blob/master/screenshots/employee_profile.png' height=500px/>
 
 
