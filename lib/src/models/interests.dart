@@ -14,7 +14,7 @@ class Interests{
   }
 }
 
-class InterestsData{
+class InterestsData {
   int? id ;
   String? name;
   String? pic_url;

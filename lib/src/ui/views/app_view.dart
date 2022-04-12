@@ -1,4 +1,5 @@
 import 'package:bloc_example/src/app.dart';
+import 'package:bloc_example/src/ui/home.dart';
 import 'package:bloc_example/src/ui/views/common/interest_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -19,10 +20,10 @@ class AppView extends StatelessWidget {
       return MaterialApp(
         debugShowCheckedModeBanner: false,
         /// change theme by user with the help of button or toggle
-        // theme: theme,  // for user change with setting
-        home: InterestView(),
+        theme: theme,  // for user change with setting
+        home: Home(),
         /// for auto theme change with the change of phone theme
-        theme:  ThemeData.light(),   // for light theme
+        // theme:  ThemeData.light(),   // for light theme
         // darkTheme: ThemeData.dark(),  // for dark theme
       );
     });

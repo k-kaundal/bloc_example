@@ -1,9 +1,9 @@
-import 'package:bloc_example/src/blocs/bloc/InterestBloc.dart';
-import 'package:bloc_example/src/blocs/event/interest_event.dart';
+import 'package:bloc_example/src/blocs/interest/InterestBloc.dart';
+import 'package:bloc_example/src/blocs/interest/interest_event.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../blocs/state/interest_state.dart';
+import '../../../blocs/interest/interest_state.dart';
 
 class InterestView extends StatefulWidget {
   const InterestView({Key? key}) : super(key: key);
@@ -50,7 +50,6 @@ class _InterestViewState extends State<InterestView> {
                     child: Card(
                       child: Column(
                         children: [
-                          Text("ID : ${state.interests.dataList[index].id}"),
                           Text("Name: ${state.interests.dataList[index].name}"),
                           Image.network(state.interests.dataList[index].thumb_url.toString()),
                           Image.network(state.interests.dataList[index].pic_url.toString()),

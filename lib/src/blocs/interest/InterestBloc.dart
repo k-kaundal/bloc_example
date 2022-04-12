@@ -1,5 +1,5 @@
-import 'package:bloc_example/src/blocs/event/interest_event.dart';
-import 'package:bloc_example/src/blocs/state/interest_state.dart';
+import 'package:bloc_example/src/blocs/interest/interest_event.dart';
+import 'package:bloc_example/src/blocs/interest/interest_state.dart';
 import 'package:bloc_example/src/repo/repository.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
