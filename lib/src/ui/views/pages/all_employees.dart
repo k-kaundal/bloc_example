@@ -1,5 +1,6 @@
 import 'package:bloc_example/src/blocs/all_employee/all_employee_bloc.dart';
 import 'package:bloc_example/src/blocs/all_employee/all_employee_state.dart';
+import 'package:bloc_example/src/config/style.dart';
 import 'package:bloc_example/src/ui/views/pages/employee.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -25,11 +26,7 @@ class _AllEmployeeState extends State<AllEmployee> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("All Employees"),
-      ),
-      body: BlocProvider(
+    return BlocProvider(
         create: (BuildContext context) => _allEmployeeBloc,
         child: BlocListener<AllEmployeeBloc, AllEmployeeState>(
           listener: (context, state) {
@@ -104,7 +101,7 @@ class _AllEmployeeState extends State<AllEmployee> {
                                         flex: 1,
                                         child: Icon(
                                           Icons.arrow_forward_ios,
-                                          color: Colors.blue,
+                                          color: primaryColor,
                                         ),
                                       )
                                     ],
@@ -115,13 +112,11 @@ class _AllEmployeeState extends State<AllEmployee> {
                       );
                     });
               } else {
-                return Center(child: ElevatedButton(onPressed: ()=>Navigator.of(context).pop(),
-                child: Container(child: Text('Back'),),));
+                return Center(child: CircularProgressIndicator());
               }
             },
           ),
         ),
-      ),
     );
   }
 }

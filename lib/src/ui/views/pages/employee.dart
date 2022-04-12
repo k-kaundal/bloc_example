@@ -1,5 +1,6 @@
 import 'package:bloc_example/src/blocs/employee/employee_bloc.dart';
 import 'package:bloc_example/src/blocs/employee/employee_event.dart';
+import 'package:bloc_example/src/config/style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
