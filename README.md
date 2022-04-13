@@ -65,7 +65,7 @@ dio: ^4.0.4
 <img src='https://github.com/codelabs-live/bloc_example/blob/master/screenshots/employee_profile.png' height=500px/>
 
 ## Error AllEmployees
-<img src='https://github.com/codelabs-live/bloc_example/blob/master/screenshots/errer_all_employees.png' height=500px/>
+<img src='https://github.com/codelabs-live/bloc_example/blob/master/screenshots/error_all_employees.png' height=500px/>
 
 ## Profile Error
 <img src='https://github.com/codelabs-live/bloc_example/blob/master/screenshots/error_employee_profile.png' height=500px/>
