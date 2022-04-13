@@ -70,6 +70,15 @@ dio: ^4.0.4
 ## Profile Error
 <img src='https://github.com/codelabs-live/bloc_example/blob/master/screenshots/error_employee_profile.png' height=500px/>
 
+## Chat Screen
+<img src='https://github.com/codelabs-live/bloc_example/blob/master/screenshots/chat_screen.png' height=500px/>
+
+## Status Screen
+<img src='https://github.com/codelabs-live/bloc_example/blob/master/screenshots/status_screen.png' height=500px/>
+
+## Settings Page
+<img src='https://github.com/codelabs-live/bloc_example/blob/master/screenshots/settings_page.png' height=500px/>
+
 
 
 
