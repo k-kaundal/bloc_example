@@ -1,8 +1,6 @@
 import 'package:bloc_example/src/ui/views/pages/all_employees.dart';
 import 'package:bloc_example/src/ui/views/pages/settings.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-
 import '../../../config/style.dart';
 import '../../widgets/custom_tab_bar.dart';
 import '../pages/call_page.dart';
